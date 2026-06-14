@@ -4,18 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "nodemon --exec ts-node src/server.ts",
     "test": "jest --watch",
+
     "typeorm": "typeorm-ts-node-commonjs",
+
     "migration:run": "typeorm-ts-node-commonjs -d ./src/database/data-source.ts migration:run",
     "migration:revert": "typeorm-ts-node-commonjs -d ./src/database/data-source.ts migration:revert",
     "migration:show": "typeorm-ts-node-commonjs -d ./src/database/data-source.ts migration:show",
     "migration:create": "typeorm-ts-node-commonjs migration:create",
     "migration:generate": "typeorm-ts-node-commonjs -d ./src/database/data-source.ts migration:generate",
-    "seed": "ts-node ./src/database/seeds/run-seeds.ts",
-    "comando:terminal": "yarn migration:generate src/database/migrations/AdicionarNovu",
-    "migration:create2": "typeorm-ts-node-commonjs migration:create ./src/database/migrations/criarUsuario",
-    "migration:generate2": "typeorm-ts-node-commonjs -d ./src/database/data-source.ts migration:generate ./src/database/migrations/criarUsuario"
+
+    "seed": "ts-node ./src/database/seeds/run-seeds.ts"
   },
   "keywords": [],
   "author": "",
